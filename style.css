@@ -1,67 +1,75 @@
 body {
-    background: black;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    font-family: -apple-system;
+    margin:0;
+    font-family:-apple-system;
+    background: radial-gradient(circle at top, #1a1a1a, #000);
+    color:white;
+    display:flex;
+    justify-content:center;
 }
 
-.phone {
-    position: relative;
-    width: 320px;
+.container {
+    width:100%;
+    max-width:400px;
+    padding:20px;
 }
 
-.mockup {
-    width: 100%;
+h1 {text-align:center;}
+.subtitle {text-align:center;color:#aaa;margin-bottom:20px;}
+
+.card {
+    position:relative;
+    margin:12px 0;
+    padding:15px;
+    border-radius:18px;
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(25px);
+    border:1px solid rgba(255,255,255,0.1);
+    overflow:hidden;
+    transition:0.3s;
 }
 
-.screen {
-    position: absolute;
-    top: 6%;
-    left: 7%;
-    width: 86%;
-    height: 88%;
-    border-radius: 30px;
-    overflow: auto;
+.card:hover {transform:scale(1.03);}
 
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(20px);
-    padding: 15px;
-    color: white;
+.card::before {
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle, rgba(255,255,255,0.2), transparent 60%);
+    top:var(--y,50%);
+    left:var(--x,50%);
+    transform:translate(-50%,-50%);
+    opacity:0;
 }
 
-h1 {
-    text-align: center;
-}
+.card:hover::before {opacity:1;}
 
 .btn {
-    display: block;
-    padding: 12px;
-    margin: 10px 0;
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
-    text-align: center;
+    display:block;
+    text-align:center;
+    padding:12px;
+    border-radius:12px;
 }
 
 .whatsapp {
-    background: #25D366;
-    color: black;
+    background:linear-gradient(135deg,#25D366,#1ebe5d);
+    color:black;
 }
 
-input, textarea {
-    width: 100%;
-    margin-top: 8px;
-    padding: 8px;
-    border-radius: 8px;
-    border: none;
+input,textarea {
+    width:100%;
+    margin-top:8px;
+    padding:10px;
+    border:none;
+    border-radius:10px;
 }
 
 button {
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    background: #0071e3;
-    border: none;
-    border-radius: 10px;
-    color: white;
+    width:100%;
+    margin-top:10px;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#0071e3,#00c6ff);
+    color:white;
 }
