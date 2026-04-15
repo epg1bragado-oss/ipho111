@@ -1,6 +1,7 @@
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        btn.style.transform = "scale(0.95)";
-        setTimeout(() => btn.style.transform = "scale(1)", 100);
+document.querySelectorAll('.card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+        const rect=card.getBoundingClientRect();
+        card.style.setProperty('--x',(e.clientX-rect.left)+'px');
+        card.style.setProperty('--y',(e.clientY-rect.top)+'px');
     });
 });
