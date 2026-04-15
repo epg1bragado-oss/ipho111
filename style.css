@@ -73,3 +73,6 @@ button {
     background:linear-gradient(135deg,#0071e3,#00c6ff);
     color:white;
 }
+.card::before {
+    pointer-events: none;
+}
